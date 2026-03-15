@@ -1,0 +1,21 @@
+name: Upload Wiz SARIF
+
+on:
+  workflow_dispatch:
+
+jobs:
+  upload-sarif:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      security-events: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Upload SARIF to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: wiz-results.sarif
