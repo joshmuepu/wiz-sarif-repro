@@ -1,0 +1,1148 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/main/sarif-2.1/schema/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "fullName": "Wiz CLI",
+          "informationUri": "https://wiz.io",
+          "name": "WizCLI",
+          "rules": [
+            {
+              "id": "CVE-2019-3822",
+              "name": "Package vulnerability",
+              "shortDescription": {
+                "text": "CVE-2019-3822"
+              },
+              "fullDescription": {
+                "text": "libcurl versions from 7.36.0 to before 7.64.0 are vulnerable to a stack-based buffer overflow. The function creating an outgoing NTLM type-3 header (`lib/vauth/ntlm.c:Curl_auth_create_ntlm_type3_message()`), generates the request HTTP header contents based on previously received data. The check that exists to prevent the local buffer from getting overflowed is implemented wrongly (using unsigned math) and as such it does not prevent the overflow from happening. This output data can grow larger than the local buffer if very large \u0026#39;nt response\u0026#39; data is extracted from a previous NTLMv2 header provided by the malicious or broken HTTP server. Such a \u0026#39;large value\u0026#39; needs to be around 1000 bytes or more. The actual payload data copied to the target buffer comes from the NTLMv2 type-2 response header."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2019-3822",
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "critical",
+                  "has-exploit"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2019-5481",
+              "name": "Package vulnerability",
+              "shortDescription": {
+                "text": "CVE-2019-5481"
+              },
+              "fullDescription": {
+                "text": "Double-free vulnerability in the FTP-kerberos code in cURL 7.52.0 to 7.65.3."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2019-5481",
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "critical"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2019-5482",
+              "name": "Package vulnerability",
+              "shortDescription": {
+                "text": "CVE-2019-5482"
+              },
+              "fullDescription": {
+                "text": "Heap buffer overflow in the TFTP protocol handler in cURL 7.19.4 to 7.65.3."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2019-5482",
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "critical"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-1664",
+              "name": "Package vulnerability",
+              "shortDescription": {
+                "text": "CVE-2022-1664"
+              },
+              "fullDescription": {
+                "text": "Dpkg::Source::Archive in dpkg, the Debian package management system, before version 1.21.8, 1.20.10, 1.19.8, 1.18.26 is prone to a directory traversal vulnerability. When extracting untrusted source packages in v2 and v3 source package formats that include a debian.tar, the in-place extraction can lead to directory traversal situations on specially crafted orig.tar and debian.tar tarballs."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2022-1664",
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "critical"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2019-20367",
+              "name": "Package vulnerability",
+              "shortDescription": {
+                "text": "CVE-2019-20367"
+              },
+              "fullDescription": {
+                "text": "nlist.c in libbsd before 0.10.0 has an out-of-bounds read during a comparison for a symbol name from the string table (strtab)."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2019-20367",
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "critical",
+                  "has-exploit"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2017-18269",
+              "name": "Package vulnerability",
+              "shortDescription": {
+                "text": "CVE-2017-18269"
+              },
+              "fullDescription": {
+                "text": "An SSE2-optimized memmove implementation for i386 in sysdeps/i386/i686/multiarch/memcpy-sse2-unaligned.S in the GNU C Library (aka glibc or libc6) 2.21 through 2.27 does not correctly perform the overlapping memory check if the source memory range spans the middle of the address space, resulting in corrupt data being produced by the copy operation. This may disclose information to context-dependent attackers, or result in a denial of service, or, possibly, code execution."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2017-18269",
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "critical"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2019-12450",
+              "name": "Package vulnerability",
+              "shortDescription": {
+                "text": "CVE-2019-12450"
+              },
+              "fullDescription": {
+                "text": "file_copy_fallback in gio/gfile.c in GNOME GLib 2.15.0 through 2.61.1 does not properly restrict file permissions while a copy operation is in progress. Instead, default permissions are used."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2019-12450",
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "critical"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2017-14062",
+              "name": "Package vulnerability",
+              "shortDescription": {
+                "text": "CVE-2017-14062"
+              },
+              "fullDescription": {
+                "text": "Integer overflow in the decode_digit function in puny_decode.c in Libidn2 before 2.0.4 allows remote attackers to cause a denial of service or possibly have unspecified other impact."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2017-14062",
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "critical"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-29155",
+              "name": "Package vulnerability",
+              "shortDescription": {
+                "text": "CVE-2022-29155"
+              },
+              "fullDescription": {
+                "text": "In OpenLDAP 2.x before 2.5.12 and 2.6.x before 2.6.2, a SQL injection vulnerability exists in the experimental back-sql backend to slapd, via a SQL statement within an LDAP query. This can occur during an LDAP search operation when the search filter is processed, due to a lack of proper escaping."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2022-29155",
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "critical",
+                  "has-exploit"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2021-3520",
+              "name": "Package vulnerability",
+              "shortDescription": {
+                "text": "CVE-2021-3520"
+              },
+              "fullDescription": {
+                "text": "There\u0026#39;s a flaw in lz4. An attacker who submits a crafted file to an application linked with lz4 may be able to trigger an integer overflow, leading to calling of memmove() on a negative size argument, causing an out-of-bounds write and/or a crash. The greatest impact of this flaw is to availability, with some potential impact to confidentiality and integrity as well."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2021-3520",
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "critical",
+                  "has-exploit"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2019-3858",
+              "name": "Package vulnerability",
+              "shortDescription": {
+                "text": "CVE-2019-3858"
+              },
+              "fullDescription": {
+                "text": "An out of bounds read flaw was discovered in libssh2 before 1.8.1 when a specially crafted SFTP packet is received from the server. A remote attacker who compromises a SSH server may be able to cause a Denial of Service or read data in the client memory."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2019-3858",
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "critical"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2019-3859",
+              "name": "Package vulnerability",
+              "shortDescription": {
+                "text": "CVE-2019-3859"
+              },
+              "fullDescription": {
+                "text": "An out of bounds read flaw was discovered in libssh2 before 1.8.1 in the _libssh2_packet_require and _libssh2_packet_requirev functions. A remote attacker who compromises a SSH server may be able to cause a Denial of Service or read data in the client memory."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2019-3859",
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "critical"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2019-3860",
+              "name": "Package vulnerability",
+              "shortDescription": {
+                "text": "CVE-2019-3860"
+              },
+              "fullDescription": {
+                "text": "An out of bounds read flaw was discovered in libssh2 before 1.8.1 in the way SFTP packets with empty payloads are parsed. A remote attacker who compromises a SSH server may be able to cause a Denial of Service or read data in the client memory."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2019-3860",
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "critical"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2019-3861",
+              "name": "Package vulnerability",
+              "shortDescription": {
+                "text": "CVE-2019-3861"
+              },
+              "fullDescription": {
+                "text": "An out of bounds read flaw was discovered in libssh2 before 1.8.1 in the way SSH packets with a padding length value greater than the packet length are parsed. A remote attacker who compromises a SSH server may be able to cause a Denial of Service or read data in the client memory."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2019-3861",
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "critical"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2019-3862",
+              "name": "Package vulnerability",
+              "shortDescription": {
+                "text": "CVE-2019-3862"
+              },
+              "fullDescription": {
+                "text": "An out of bounds read flaw was discovered in libssh2 before 1.8.1 in the way SSH_MSG_CHANNEL_REQUEST packets with an exit status message and no payload are parsed. A remote attacker who compromises a SSH server may be able to cause a Denial of Service or read data in the client memory."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2019-3862",
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "critical"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2017-8872",
+              "name": "Package vulnerability",
+              "shortDescription": {
+                "text": "CVE-2017-8872"
+              },
+              "fullDescription": {
+                "text": "The htmlParseTryOrFinish function in HTMLparser.c in libxml2 2.9.4 allows attackers to cause a denial of service (buffer over-read) or information disclosure."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2017-8872",
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "critical"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2017-12424",
+              "name": "Package vulnerability",
+              "shortDescription": {
+                "text": "CVE-2017-12424"
+              },
+              "fullDescription": {
+                "text": "In shadow before 4.5, the newusers tool could be made to manipulate internal data structures in ways unintended by the authors. Malformed input may lead to crashes (with a buffer overflow or other memory corruption) or other unspecified behaviors. This crosses a privilege boundary in, for example, certain web-hosting environments in which a Control Panel allows an unprivileged user account to create subaccounts."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://security-tracker.debian.org/tracker/CVE-2017-12424",
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "critical"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "CVE-2019-3822",
+          "ruleIndex": 0,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2019-3822\nSeverity: Critical\nComponent: curl\nType: Package vulnerability\nVersion: 7.52.1-5+deb9u8\nFixed version: 7.52.1-5+deb9u9\nSource: [CVE-2019-3822](https://security-tracker.debian.org/tracker/CVE-2019-3822)\nDescription: libcurl versions from 7.36.0 to before 7.64.0 are vulnerable to a stack-based buffer overflow. The function creating an outgoing NTLM type-3 header (`lib/vauth/ntlm.c:Curl_auth_create_ntlm_type3_message()`), generates the request HTTP header contents based on previously received data. The check that exists to prevent the local buffer from getting overflowed is implemented wrongly (using unsigned math) and as such it does not prevent the overflow from happening. This output data can grow larger than the local buffer if very large 'nt response' data is extracted from a previous NTLMv2 header provided by the malicious or broken HTTP server. Such a 'large value' needs to be around 1000 bytes or more. The actual payload data copied to the target buffer comes from the NTLMv2 type-2 response header.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `curl` version `7.52.1-5+deb9u8`\n- Vulnerable to [**`CVE-2019-3822`**](https://security-tracker.debian.org/tracker/CVE-2019-3822)\n- Fixed version: `7.52.1-5+deb9u9`\n### 🔍 Overview\nlibcurl versions from 7.36.0 to before 7.64.0 are vulnerable to a stack-based buffer overflow. The function creating an outgoing NTLM type-3 header (`lib/vauth/ntlm.c:Curl_auth_create_ntlm_type3_message()`), generates the request HTTP header contents based on previously received data. The check that exists to prevent the local buffer from getting overflowed is implemented wrongly (using unsigned math) and as such it does not prevent the overflow from happening. This output data can grow larger than the local buffer if very large 'nt response' data is extracted from a previous NTLMv2 header provided by the malicious or broken HTTP server. Such a 'large value' needs to be around 1000 bytes or more. The actual payload data copied to the target buffer comes from the NTLMv2 type-2 response header.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2019-3822)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%278a7ab3f1-85d9-5658-b332-d8608ef0f3e4*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2019-3822))~cve~%27CVE-2019-3822))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: curl@7.52.1-5+deb9u8"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2019-5481",
+          "ruleIndex": 1,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2019-5481\nSeverity: Critical\nComponent: curl\nType: Package vulnerability\nVersion: 7.52.1-5+deb9u8\nFixed version: 7.52.1-5+deb9u10\nSource: [CVE-2019-5481](https://security-tracker.debian.org/tracker/CVE-2019-5481)\nDescription: Double-free vulnerability in the FTP-kerberos code in cURL 7.52.0 to 7.65.3.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `curl` version `7.52.1-5+deb9u8`\n- Vulnerable to [**`CVE-2019-5481`**](https://security-tracker.debian.org/tracker/CVE-2019-5481)\n- Fixed version: `7.52.1-5+deb9u10`\n### 🔍 Overview\nDouble-free vulnerability in the FTP-kerberos code in cURL 7.52.0 to 7.65.3.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2019-5481)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%2736bbad6f-2a94-529b-9626-80b1945265b4*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2019-5481))~cve~%27CVE-2019-5481))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: curl@7.52.1-5+deb9u8"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2019-5482",
+          "ruleIndex": 2,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2019-5482\nSeverity: Critical\nComponent: curl\nType: Package vulnerability\nVersion: 7.52.1-5+deb9u8\nFixed version: 7.52.1-5+deb9u10\nSource: [CVE-2019-5482](https://security-tracker.debian.org/tracker/CVE-2019-5482)\nDescription: Heap buffer overflow in the TFTP protocol handler in cURL 7.19.4 to 7.65.3.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `curl` version `7.52.1-5+deb9u8`\n- Vulnerable to [**`CVE-2019-5482`**](https://security-tracker.debian.org/tracker/CVE-2019-5482)\n- Fixed version: `7.52.1-5+deb9u10`\n### 🔍 Overview\nHeap buffer overflow in the TFTP protocol handler in cURL 7.19.4 to 7.65.3.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2019-5482)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%27be5f12d7-962a-5095-a93b-a9143e802ef5*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2019-5482))~cve~%27CVE-2019-5482))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: curl@7.52.1-5+deb9u8"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-1664",
+          "ruleIndex": 3,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2022-1664\nSeverity: Critical\nComponent: dpkg\nType: Package vulnerability\nVersion: 1.18.25\nFixed version: 1.18.26\nSource: [CVE-2022-1664](https://security-tracker.debian.org/tracker/CVE-2022-1664)\nDescription: Dpkg::Source::Archive in dpkg, the Debian package management system, before version 1.21.8, 1.20.10, 1.19.8, 1.18.26 is prone to a directory traversal vulnerability. When extracting untrusted source packages in v2 and v3 source package formats that include a debian.tar, the in-place extraction can lead to directory traversal situations on specially crafted orig.tar and debian.tar tarballs.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `dpkg` version `1.18.25`\n- Vulnerable to [**`CVE-2022-1664`**](https://security-tracker.debian.org/tracker/CVE-2022-1664)\n- Fixed version: `1.18.26`\n### 🔍 Overview\nDpkg::Source::Archive in dpkg, the Debian package management system, before version 1.21.8, 1.20.10, 1.19.8, 1.18.26 is prone to a directory traversal vulnerability. When extracting untrusted source packages in v2 and v3 source package formats that include a debian.tar, the in-place extraction can lead to directory traversal situations on specially crafted orig.tar and debian.tar tarballs.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2022-1664)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%279008b552-8fe6-5962-9fff-2f583573ef4c*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2022-1664))~cve~%27CVE-2022-1664))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: dpkg@1.18.25"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-1664",
+          "ruleIndex": 3,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2022-1664\nSeverity: Critical\nComponent: dpkg-dev\nType: Package vulnerability\nVersion: 1.18.25\nFixed version: 1.18.26\nSource: [CVE-2022-1664](https://security-tracker.debian.org/tracker/CVE-2022-1664)\nDescription: Dpkg::Source::Archive in dpkg, the Debian package management system, before version 1.21.8, 1.20.10, 1.19.8, 1.18.26 is prone to a directory traversal vulnerability. When extracting untrusted source packages in v2 and v3 source package formats that include a debian.tar, the in-place extraction can lead to directory traversal situations on specially crafted orig.tar and debian.tar tarballs.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `dpkg-dev` version `1.18.25`\n- Vulnerable to [**`CVE-2022-1664`**](https://security-tracker.debian.org/tracker/CVE-2022-1664)\n- Fixed version: `1.18.26`\n### 🔍 Overview\nDpkg::Source::Archive in dpkg, the Debian package management system, before version 1.21.8, 1.20.10, 1.19.8, 1.18.26 is prone to a directory traversal vulnerability. When extracting untrusted source packages in v2 and v3 source package formats that include a debian.tar, the in-place extraction can lead to directory traversal situations on specially crafted orig.tar and debian.tar tarballs.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2022-1664)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%271c87583e-0adc-50e3-9b16-c929bfc118ee*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2022-1664))~cve~%27CVE-2022-1664))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: dpkg-dev@1.18.25"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2019-20367",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2019-20367\nSeverity: Critical\nComponent: libbsd0\nType: Package vulnerability\nVersion: 0.8.3-1\nFixed version: 0.8.3-1+deb9u1\nSource: [CVE-2019-20367](https://security-tracker.debian.org/tracker/CVE-2019-20367)\nDescription: nlist.c in libbsd before 0.10.0 has an out-of-bounds read during a comparison for a symbol name from the string table (strtab).",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `libbsd0` version `0.8.3-1`\n- Vulnerable to [**`CVE-2019-20367`**](https://security-tracker.debian.org/tracker/CVE-2019-20367)\n- Fixed version: `0.8.3-1+deb9u1`\n### 🔍 Overview\nnlist.c in libbsd before 0.10.0 has an out-of-bounds read during a comparison for a symbol name from the string table (strtab).\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2019-20367)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%27bb21c6f7-9e2d-5e41-859b-77d52289e1aa*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2019-20367))~cve~%27CVE-2019-20367))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: libbsd0@0.8.3-1"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2017-18269",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2017-18269\nSeverity: Critical\nComponent: libc-bin\nType: Package vulnerability\nVersion: 2.24-11+deb9u3\nFixed version: 2.24-11+deb9u4\nSource: [CVE-2017-18269](https://security-tracker.debian.org/tracker/CVE-2017-18269)\nDescription: An SSE2-optimized memmove implementation for i386 in sysdeps/i386/i686/multiarch/memcpy-sse2-unaligned.S in the GNU C Library (aka glibc or libc6) 2.21 through 2.27 does not correctly perform the overlapping memory check if the source memory range spans the middle of the address space, resulting in corrupt data being produced by the copy operation. This may disclose information to context-dependent attackers, or result in a denial of service, or, possibly, code execution.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `libc-bin` version `2.24-11+deb9u3`\n- Vulnerable to [**`CVE-2017-18269`**](https://security-tracker.debian.org/tracker/CVE-2017-18269)\n- Fixed version: `2.24-11+deb9u4`\n### 🔍 Overview\nAn SSE2-optimized memmove implementation for i386 in sysdeps/i386/i686/multiarch/memcpy-sse2-unaligned.S in the GNU C Library (aka glibc or libc6) 2.21 through 2.27 does not correctly perform the overlapping memory check if the source memory range spans the middle of the address space, resulting in corrupt data being produced by the copy operation. This may disclose information to context-dependent attackers, or result in a denial of service, or, possibly, code execution.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2017-18269)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%270e50c864-aad8-5fd6-ba52-eedd31a55f13*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2017-18269))~cve~%27CVE-2017-18269))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: libc-bin@2.24-11+deb9u3"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2017-18269",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2017-18269\nSeverity: Critical\nComponent: libc-dev-bin\nType: Package vulnerability\nVersion: 2.24-11+deb9u3\nFixed version: 2.24-11+deb9u4\nSource: [CVE-2017-18269](https://security-tracker.debian.org/tracker/CVE-2017-18269)\nDescription: An SSE2-optimized memmove implementation for i386 in sysdeps/i386/i686/multiarch/memcpy-sse2-unaligned.S in the GNU C Library (aka glibc or libc6) 2.21 through 2.27 does not correctly perform the overlapping memory check if the source memory range spans the middle of the address space, resulting in corrupt data being produced by the copy operation. This may disclose information to context-dependent attackers, or result in a denial of service, or, possibly, code execution.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `libc-dev-bin` version `2.24-11+deb9u3`\n- Vulnerable to [**`CVE-2017-18269`**](https://security-tracker.debian.org/tracker/CVE-2017-18269)\n- Fixed version: `2.24-11+deb9u4`\n### 🔍 Overview\nAn SSE2-optimized memmove implementation for i386 in sysdeps/i386/i686/multiarch/memcpy-sse2-unaligned.S in the GNU C Library (aka glibc or libc6) 2.21 through 2.27 does not correctly perform the overlapping memory check if the source memory range spans the middle of the address space, resulting in corrupt data being produced by the copy operation. This may disclose information to context-dependent attackers, or result in a denial of service, or, possibly, code execution.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2017-18269)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%27cfee12f7-c8eb-58ca-a52d-e21863be757b*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2017-18269))~cve~%27CVE-2017-18269))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: libc-dev-bin@2.24-11+deb9u3"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2017-18269",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2017-18269\nSeverity: Critical\nComponent: libc6\nType: Package vulnerability\nVersion: 2.24-11+deb9u3\nFixed version: 2.24-11+deb9u4\nSource: [CVE-2017-18269](https://security-tracker.debian.org/tracker/CVE-2017-18269)\nDescription: An SSE2-optimized memmove implementation for i386 in sysdeps/i386/i686/multiarch/memcpy-sse2-unaligned.S in the GNU C Library (aka glibc or libc6) 2.21 through 2.27 does not correctly perform the overlapping memory check if the source memory range spans the middle of the address space, resulting in corrupt data being produced by the copy operation. This may disclose information to context-dependent attackers, or result in a denial of service, or, possibly, code execution.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `libc6` version `2.24-11+deb9u3`\n- Vulnerable to [**`CVE-2017-18269`**](https://security-tracker.debian.org/tracker/CVE-2017-18269)\n- Fixed version: `2.24-11+deb9u4`\n### 🔍 Overview\nAn SSE2-optimized memmove implementation for i386 in sysdeps/i386/i686/multiarch/memcpy-sse2-unaligned.S in the GNU C Library (aka glibc or libc6) 2.21 through 2.27 does not correctly perform the overlapping memory check if the source memory range spans the middle of the address space, resulting in corrupt data being produced by the copy operation. This may disclose information to context-dependent attackers, or result in a denial of service, or, possibly, code execution.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2017-18269)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%27bdf2eda9-8547-5b6d-b787-36618d63c107*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2017-18269))~cve~%27CVE-2017-18269))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: libc6@2.24-11+deb9u3"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2017-18269",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2017-18269\nSeverity: Critical\nComponent: libc6-dev\nType: Package vulnerability\nVersion: 2.24-11+deb9u3\nFixed version: 2.24-11+deb9u4\nSource: [CVE-2017-18269](https://security-tracker.debian.org/tracker/CVE-2017-18269)\nDescription: An SSE2-optimized memmove implementation for i386 in sysdeps/i386/i686/multiarch/memcpy-sse2-unaligned.S in the GNU C Library (aka glibc or libc6) 2.21 through 2.27 does not correctly perform the overlapping memory check if the source memory range spans the middle of the address space, resulting in corrupt data being produced by the copy operation. This may disclose information to context-dependent attackers, or result in a denial of service, or, possibly, code execution.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `libc6-dev` version `2.24-11+deb9u3`\n- Vulnerable to [**`CVE-2017-18269`**](https://security-tracker.debian.org/tracker/CVE-2017-18269)\n- Fixed version: `2.24-11+deb9u4`\n### 🔍 Overview\nAn SSE2-optimized memmove implementation for i386 in sysdeps/i386/i686/multiarch/memcpy-sse2-unaligned.S in the GNU C Library (aka glibc or libc6) 2.21 through 2.27 does not correctly perform the overlapping memory check if the source memory range spans the middle of the address space, resulting in corrupt data being produced by the copy operation. This may disclose information to context-dependent attackers, or result in a denial of service, or, possibly, code execution.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2017-18269)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%270d095faa-b72f-5671-82bb-645edcb8eef8*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2017-18269))~cve~%27CVE-2017-18269))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: libc6-dev@2.24-11+deb9u3"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2019-3822",
+          "ruleIndex": 0,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2019-3822\nSeverity: Critical\nComponent: libcurl3\nType: Package vulnerability\nVersion: 7.52.1-5+deb9u8\nFixed version: 7.52.1-5+deb9u9\nSource: [CVE-2019-3822](https://security-tracker.debian.org/tracker/CVE-2019-3822)\nDescription: libcurl versions from 7.36.0 to before 7.64.0 are vulnerable to a stack-based buffer overflow. The function creating an outgoing NTLM type-3 header (`lib/vauth/ntlm.c:Curl_auth_create_ntlm_type3_message()`), generates the request HTTP header contents based on previously received data. The check that exists to prevent the local buffer from getting overflowed is implemented wrongly (using unsigned math) and as such it does not prevent the overflow from happening. This output data can grow larger than the local buffer if very large 'nt response' data is extracted from a previous NTLMv2 header provided by the malicious or broken HTTP server. Such a 'large value' needs to be around 1000 bytes or more. The actual payload data copied to the target buffer comes from the NTLMv2 type-2 response header.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `libcurl3` version `7.52.1-5+deb9u8`\n- Vulnerable to [**`CVE-2019-3822`**](https://security-tracker.debian.org/tracker/CVE-2019-3822)\n- Fixed version: `7.52.1-5+deb9u9`\n### 🔍 Overview\nlibcurl versions from 7.36.0 to before 7.64.0 are vulnerable to a stack-based buffer overflow. The function creating an outgoing NTLM type-3 header (`lib/vauth/ntlm.c:Curl_auth_create_ntlm_type3_message()`), generates the request HTTP header contents based on previously received data. The check that exists to prevent the local buffer from getting overflowed is implemented wrongly (using unsigned math) and as such it does not prevent the overflow from happening. This output data can grow larger than the local buffer if very large 'nt response' data is extracted from a previous NTLMv2 header provided by the malicious or broken HTTP server. Such a 'large value' needs to be around 1000 bytes or more. The actual payload data copied to the target buffer comes from the NTLMv2 type-2 response header.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2019-3822)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%27d87096e3-b3e2-5f41-b94d-2e2f08166e8d*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2019-3822))~cve~%27CVE-2019-3822))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: libcurl3@7.52.1-5+deb9u8"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2019-5481",
+          "ruleIndex": 1,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2019-5481\nSeverity: Critical\nComponent: libcurl3\nType: Package vulnerability\nVersion: 7.52.1-5+deb9u8\nFixed version: 7.52.1-5+deb9u10\nSource: [CVE-2019-5481](https://security-tracker.debian.org/tracker/CVE-2019-5481)\nDescription: Double-free vulnerability in the FTP-kerberos code in cURL 7.52.0 to 7.65.3.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `libcurl3` version `7.52.1-5+deb9u8`\n- Vulnerable to [**`CVE-2019-5481`**](https://security-tracker.debian.org/tracker/CVE-2019-5481)\n- Fixed version: `7.52.1-5+deb9u10`\n### 🔍 Overview\nDouble-free vulnerability in the FTP-kerberos code in cURL 7.52.0 to 7.65.3.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2019-5481)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%27cc200169-63a0-5b93-aa50-ec76893fcad5*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2019-5481))~cve~%27CVE-2019-5481))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: libcurl3@7.52.1-5+deb9u8"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2019-5482",
+          "ruleIndex": 2,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2019-5482\nSeverity: Critical\nComponent: libcurl3\nType: Package vulnerability\nVersion: 7.52.1-5+deb9u8\nFixed version: 7.52.1-5+deb9u10\nSource: [CVE-2019-5482](https://security-tracker.debian.org/tracker/CVE-2019-5482)\nDescription: Heap buffer overflow in the TFTP protocol handler in cURL 7.19.4 to 7.65.3.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `libcurl3` version `7.52.1-5+deb9u8`\n- Vulnerable to [**`CVE-2019-5482`**](https://security-tracker.debian.org/tracker/CVE-2019-5482)\n- Fixed version: `7.52.1-5+deb9u10`\n### 🔍 Overview\nHeap buffer overflow in the TFTP protocol handler in cURL 7.19.4 to 7.65.3.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2019-5482)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%27fe02ff72-531c-57f0-be0f-ed63985cb76a*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2019-5482))~cve~%27CVE-2019-5482))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: libcurl3@7.52.1-5+deb9u8"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-1664",
+          "ruleIndex": 3,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2022-1664\nSeverity: Critical\nComponent: libdpkg-perl\nType: Package vulnerability\nVersion: 1.18.25\nFixed version: 1.18.26\nSource: [CVE-2022-1664](https://security-tracker.debian.org/tracker/CVE-2022-1664)\nDescription: Dpkg::Source::Archive in dpkg, the Debian package management system, before version 1.21.8, 1.20.10, 1.19.8, 1.18.26 is prone to a directory traversal vulnerability. When extracting untrusted source packages in v2 and v3 source package formats that include a debian.tar, the in-place extraction can lead to directory traversal situations on specially crafted orig.tar and debian.tar tarballs.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `libdpkg-perl` version `1.18.25`\n- Vulnerable to [**`CVE-2022-1664`**](https://security-tracker.debian.org/tracker/CVE-2022-1664)\n- Fixed version: `1.18.26`\n### 🔍 Overview\nDpkg::Source::Archive in dpkg, the Debian package management system, before version 1.21.8, 1.20.10, 1.19.8, 1.18.26 is prone to a directory traversal vulnerability. When extracting untrusted source packages in v2 and v3 source package formats that include a debian.tar, the in-place extraction can lead to directory traversal situations on specially crafted orig.tar and debian.tar tarballs.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2022-1664)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%27bbd1927f-1a41-5652-8308-ea7794f4d38b*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2022-1664))~cve~%27CVE-2022-1664))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: libdpkg-perl@1.18.25"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2019-12450",
+          "ruleIndex": 6,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2019-12450\nSeverity: Critical\nComponent: libglib2.0-0\nType: Package vulnerability\nVersion: 2.50.3-2\nFixed version: 2.50.3-2+deb9u1\nSource: [CVE-2019-12450](https://security-tracker.debian.org/tracker/CVE-2019-12450)\nDescription: file_copy_fallback in gio/gfile.c in GNOME GLib 2.15.0 through 2.61.1 does not properly restrict file permissions while a copy operation is in progress. Instead, default permissions are used.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `libglib2.0-0` version `2.50.3-2`\n- Vulnerable to [**`CVE-2019-12450`**](https://security-tracker.debian.org/tracker/CVE-2019-12450)\n- Fixed version: `2.50.3-2+deb9u1`\n### 🔍 Overview\nfile_copy_fallback in gio/gfile.c in GNOME GLib 2.15.0 through 2.61.1 does not properly restrict file permissions while a copy operation is in progress. Instead, default permissions are used.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2019-12450)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%2749c8ac99-ff88-524e-bf1e-2cbd95d78f71*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2019-12450))~cve~%27CVE-2019-12450))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: libglib2.0-0@2.50.3-2"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2017-14062",
+          "ruleIndex": 7,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2017-14062\nSeverity: Critical\nComponent: libidn11\nType: Package vulnerability\nVersion: 1.33-1\nFixed version: 1.33-1+deb9u1\nSource: [CVE-2017-14062](https://security-tracker.debian.org/tracker/CVE-2017-14062)\nDescription: Integer overflow in the decode_digit function in puny_decode.c in Libidn2 before 2.0.4 allows remote attackers to cause a denial of service or possibly have unspecified other impact.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `libidn11` version `1.33-1`\n- Vulnerable to [**`CVE-2017-14062`**](https://security-tracker.debian.org/tracker/CVE-2017-14062)\n- Fixed version: `1.33-1+deb9u1`\n### 🔍 Overview\nInteger overflow in the decode_digit function in puny_decode.c in Libidn2 before 2.0.4 allows remote attackers to cause a denial of service or possibly have unspecified other impact.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2017-14062)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%2749e08ac6-6616-533d-a645-d97996f1dc56*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2017-14062))~cve~%27CVE-2017-14062))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: libidn11@1.33-1"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-29155",
+          "ruleIndex": 8,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2022-29155\nSeverity: Critical\nComponent: libldap-2.4-2\nType: Package vulnerability\nVersion: 2.4.44+dfsg-5+deb9u2\nFixed version: 2.4.44+dfsg-5+deb9u9\nSource: [CVE-2022-29155](https://security-tracker.debian.org/tracker/CVE-2022-29155)\nDescription: In OpenLDAP 2.x before 2.5.12 and 2.6.x before 2.6.2, a SQL injection vulnerability exists in the experimental back-sql backend to slapd, via a SQL statement within an LDAP query. This can occur during an LDAP search operation when the search filter is processed, due to a lack of proper escaping.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `libldap-2.4-2` version `2.4.44+dfsg-5+deb9u2`\n- Vulnerable to [**`CVE-2022-29155`**](https://security-tracker.debian.org/tracker/CVE-2022-29155)\n- Fixed version: `2.4.44+dfsg-5+deb9u9`\n### 🔍 Overview\nIn OpenLDAP 2.x before 2.5.12 and 2.6.x before 2.6.2, a SQL injection vulnerability exists in the experimental back-sql backend to slapd, via a SQL statement within an LDAP query. This can occur during an LDAP search operation when the search filter is processed, due to a lack of proper escaping.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2022-29155)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%277b39dc5b-0347-5f2d-8516-cedfc3d88f99*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2022-29155))~cve~%27CVE-2022-29155))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: libldap-2.4-2@2.4.44+dfsg-5+deb9u2"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-29155",
+          "ruleIndex": 8,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2022-29155\nSeverity: Critical\nComponent: libldap-common\nType: Package vulnerability\nVersion: 2.4.44+dfsg-5+deb9u2\nFixed version: 2.4.44+dfsg-5+deb9u9\nSource: [CVE-2022-29155](https://security-tracker.debian.org/tracker/CVE-2022-29155)\nDescription: In OpenLDAP 2.x before 2.5.12 and 2.6.x before 2.6.2, a SQL injection vulnerability exists in the experimental back-sql backend to slapd, via a SQL statement within an LDAP query. This can occur during an LDAP search operation when the search filter is processed, due to a lack of proper escaping.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `libldap-common` version `2.4.44+dfsg-5+deb9u2`\n- Vulnerable to [**`CVE-2022-29155`**](https://security-tracker.debian.org/tracker/CVE-2022-29155)\n- Fixed version: `2.4.44+dfsg-5+deb9u9`\n### 🔍 Overview\nIn OpenLDAP 2.x before 2.5.12 and 2.6.x before 2.6.2, a SQL injection vulnerability exists in the experimental back-sql backend to slapd, via a SQL statement within an LDAP query. This can occur during an LDAP search operation when the search filter is processed, due to a lack of proper escaping.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2022-29155)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%27cb993193-894b-5728-ae89-69d468966b04*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2022-29155))~cve~%27CVE-2022-29155))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: libldap-common@2.4.44+dfsg-5+deb9u2"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2021-3520",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2021-3520\nSeverity: Critical\nComponent: liblz4-1\nType: Package vulnerability\nVersion: 0.0~r131-2+b1\nFixed version: 0.0~r131-2+deb9u1\nSource: [CVE-2021-3520](https://security-tracker.debian.org/tracker/CVE-2021-3520)\nDescription: There's a flaw in lz4. An attacker who submits a crafted file to an application linked with lz4 may be able to trigger an integer overflow, leading to calling of memmove() on a negative size argument, causing an out-of-bounds write and/or a crash. The greatest impact of this flaw is to availability, with some potential impact to confidentiality and integrity as well.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `liblz4-1` version `0.0~r131-2+b1`\n- Vulnerable to [**`CVE-2021-3520`**](https://security-tracker.debian.org/tracker/CVE-2021-3520)\n- Fixed version: `0.0~r131-2+deb9u1`\n### 🔍 Overview\nThere's a flaw in lz4. An attacker who submits a crafted file to an application linked with lz4 may be able to trigger an integer overflow, leading to calling of memmove() on a negative size argument, causing an out-of-bounds write and/or a crash. The greatest impact of this flaw is to availability, with some potential impact to confidentiality and integrity as well.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2021-3520)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%27592f9006-8dab-54c8-a6c3-f4cd02ec83ad*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2021-3520))~cve~%27CVE-2021-3520))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: liblz4-1@0.0~r131-2+b1"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2019-3858",
+          "ruleIndex": 10,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2019-3858\nSeverity: Critical\nComponent: libssh2-1\nType: Package vulnerability\nVersion: 1.7.0-1\nFixed version: 1.7.0-1+deb9u1\nSource: [CVE-2019-3858](https://security-tracker.debian.org/tracker/CVE-2019-3858)\nDescription: An out of bounds read flaw was discovered in libssh2 before 1.8.1 when a specially crafted SFTP packet is received from the server. A remote attacker who compromises a SSH server may be able to cause a Denial of Service or read data in the client memory.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `libssh2-1` version `1.7.0-1`\n- Vulnerable to [**`CVE-2019-3858`**](https://security-tracker.debian.org/tracker/CVE-2019-3858)\n- Fixed version: `1.7.0-1+deb9u1`\n### 🔍 Overview\nAn out of bounds read flaw was discovered in libssh2 before 1.8.1 when a specially crafted SFTP packet is received from the server. A remote attacker who compromises a SSH server may be able to cause a Denial of Service or read data in the client memory.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2019-3858)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%27fcf70116-47f2-5dc1-a1a2-767e36c52b2d*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2019-3858))~cve~%27CVE-2019-3858))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: libssh2-1@1.7.0-1"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2019-3859",
+          "ruleIndex": 11,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2019-3859\nSeverity: Critical\nComponent: libssh2-1\nType: Package vulnerability\nVersion: 1.7.0-1\nFixed version: 1.7.0-1+deb9u1\nSource: [CVE-2019-3859](https://security-tracker.debian.org/tracker/CVE-2019-3859)\nDescription: An out of bounds read flaw was discovered in libssh2 before 1.8.1 in the _libssh2_packet_require and _libssh2_packet_requirev functions. A remote attacker who compromises a SSH server may be able to cause a Denial of Service or read data in the client memory.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `libssh2-1` version `1.7.0-1`\n- Vulnerable to [**`CVE-2019-3859`**](https://security-tracker.debian.org/tracker/CVE-2019-3859)\n- Fixed version: `1.7.0-1+deb9u1`\n### 🔍 Overview\nAn out of bounds read flaw was discovered in libssh2 before 1.8.1 in the _libssh2_packet_require and _libssh2_packet_requirev functions. A remote attacker who compromises a SSH server may be able to cause a Denial of Service or read data in the client memory.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2019-3859)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%2790261125-90bb-5791-af14-c1c24bbc592a*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2019-3859))~cve~%27CVE-2019-3859))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: libssh2-1@1.7.0-1"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2019-3860",
+          "ruleIndex": 12,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2019-3860\nSeverity: Critical\nComponent: libssh2-1\nType: Package vulnerability\nVersion: 1.7.0-1\nFixed version: 1.7.0-1+deb9u1\nSource: [CVE-2019-3860](https://security-tracker.debian.org/tracker/CVE-2019-3860)\nDescription: An out of bounds read flaw was discovered in libssh2 before 1.8.1 in the way SFTP packets with empty payloads are parsed. A remote attacker who compromises a SSH server may be able to cause a Denial of Service or read data in the client memory.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `libssh2-1` version `1.7.0-1`\n- Vulnerable to [**`CVE-2019-3860`**](https://security-tracker.debian.org/tracker/CVE-2019-3860)\n- Fixed version: `1.7.0-1+deb9u1`\n### 🔍 Overview\nAn out of bounds read flaw was discovered in libssh2 before 1.8.1 in the way SFTP packets with empty payloads are parsed. A remote attacker who compromises a SSH server may be able to cause a Denial of Service or read data in the client memory.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2019-3860)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%278f08e382-e7d5-5fe5-bf86-ef454b539954*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2019-3860))~cve~%27CVE-2019-3860))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: libssh2-1@1.7.0-1"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2019-3861",
+          "ruleIndex": 13,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2019-3861\nSeverity: Critical\nComponent: libssh2-1\nType: Package vulnerability\nVersion: 1.7.0-1\nFixed version: 1.7.0-1+deb9u1\nSource: [CVE-2019-3861](https://security-tracker.debian.org/tracker/CVE-2019-3861)\nDescription: An out of bounds read flaw was discovered in libssh2 before 1.8.1 in the way SSH packets with a padding length value greater than the packet length are parsed. A remote attacker who compromises a SSH server may be able to cause a Denial of Service or read data in the client memory.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `libssh2-1` version `1.7.0-1`\n- Vulnerable to [**`CVE-2019-3861`**](https://security-tracker.debian.org/tracker/CVE-2019-3861)\n- Fixed version: `1.7.0-1+deb9u1`\n### 🔍 Overview\nAn out of bounds read flaw was discovered in libssh2 before 1.8.1 in the way SSH packets with a padding length value greater than the packet length are parsed. A remote attacker who compromises a SSH server may be able to cause a Denial of Service or read data in the client memory.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2019-3861)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%272a17dff1-6611-5468-9b1f-455fcaf698f9*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2019-3861))~cve~%27CVE-2019-3861))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: libssh2-1@1.7.0-1"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2019-3862",
+          "ruleIndex": 14,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2019-3862\nSeverity: Critical\nComponent: libssh2-1\nType: Package vulnerability\nVersion: 1.7.0-1\nFixed version: 1.7.0-1+deb9u1\nSource: [CVE-2019-3862](https://security-tracker.debian.org/tracker/CVE-2019-3862)\nDescription: An out of bounds read flaw was discovered in libssh2 before 1.8.1 in the way SSH_MSG_CHANNEL_REQUEST packets with an exit status message and no payload are parsed. A remote attacker who compromises a SSH server may be able to cause a Denial of Service or read data in the client memory.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `libssh2-1` version `1.7.0-1`\n- Vulnerable to [**`CVE-2019-3862`**](https://security-tracker.debian.org/tracker/CVE-2019-3862)\n- Fixed version: `1.7.0-1+deb9u1`\n### 🔍 Overview\nAn out of bounds read flaw was discovered in libssh2 before 1.8.1 in the way SSH_MSG_CHANNEL_REQUEST packets with an exit status message and no payload are parsed. A remote attacker who compromises a SSH server may be able to cause a Denial of Service or read data in the client memory.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2019-3862)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%276972f25b-845f-5ad3-b289-0a87a73a3544*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2019-3862))~cve~%27CVE-2019-3862))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: libssh2-1@1.7.0-1"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2017-8872",
+          "ruleIndex": 15,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2017-8872\nSeverity: Critical\nComponent: libxml2\nType: Package vulnerability\nVersion: 2.9.4+dfsg1-2.2+deb9u2\nFixed version: 2.9.4+dfsg1-2.2+deb9u3\nSource: [CVE-2017-8872](https://security-tracker.debian.org/tracker/CVE-2017-8872)\nDescription: The htmlParseTryOrFinish function in HTMLparser.c in libxml2 2.9.4 allows attackers to cause a denial of service (buffer over-read) or information disclosure.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `libxml2` version `2.9.4+dfsg1-2.2+deb9u2`\n- Vulnerable to [**`CVE-2017-8872`**](https://security-tracker.debian.org/tracker/CVE-2017-8872)\n- Fixed version: `2.9.4+dfsg1-2.2+deb9u3`\n### 🔍 Overview\nThe htmlParseTryOrFinish function in HTMLparser.c in libxml2 2.9.4 allows attackers to cause a denial of service (buffer over-read) or information disclosure.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2017-8872)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%272bd42ab7-4492-5499-bb99-80c801e43363*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2017-8872))~cve~%27CVE-2017-8872))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: libxml2@2.9.4+dfsg1-2.2+deb9u2"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2017-12424",
+          "ruleIndex": 16,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2017-12424\nSeverity: Critical\nComponent: login\nType: Package vulnerability\nVersion: 1:4.4-4.1\nFixed version: 1:4.4-4.1+deb9u1\nSource: [CVE-2017-12424](https://security-tracker.debian.org/tracker/CVE-2017-12424)\nDescription: In shadow before 4.5, the newusers tool could be made to manipulate internal data structures in ways unintended by the authors. Malformed input may lead to crashes (with a buffer overflow or other memory corruption) or other unspecified behaviors. This crosses a privilege boundary in, for example, certain web-hosting environments in which a Control Panel allows an unprivileged user account to create subaccounts.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `login` version `1:4.4-4.1`\n- Vulnerable to [**`CVE-2017-12424`**](https://security-tracker.debian.org/tracker/CVE-2017-12424)\n- Fixed version: `1:4.4-4.1+deb9u1`\n### 🔍 Overview\nIn shadow before 4.5, the newusers tool could be made to manipulate internal data structures in ways unintended by the authors. Malformed input may lead to crashes (with a buffer overflow or other memory corruption) or other unspecified behaviors. This crosses a privilege boundary in, for example, certain web-hosting environments in which a Control Panel allows an unprivileged user account to create subaccounts.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2017-12424)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%27abd7cd92-8ac9-596c-b4a7-08256ad51fbc*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2017-12424))~cve~%27CVE-2017-12424))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: login@1:4.4-4.1"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2017-18269",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2017-18269\nSeverity: Critical\nComponent: multiarch-support\nType: Package vulnerability\nVersion: 2.24-11+deb9u3\nFixed version: 2.24-11+deb9u4\nSource: [CVE-2017-18269](https://security-tracker.debian.org/tracker/CVE-2017-18269)\nDescription: An SSE2-optimized memmove implementation for i386 in sysdeps/i386/i686/multiarch/memcpy-sse2-unaligned.S in the GNU C Library (aka glibc or libc6) 2.21 through 2.27 does not correctly perform the overlapping memory check if the source memory range spans the middle of the address space, resulting in corrupt data being produced by the copy operation. This may disclose information to context-dependent attackers, or result in a denial of service, or, possibly, code execution.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `multiarch-support` version `2.24-11+deb9u3`\n- Vulnerable to [**`CVE-2017-18269`**](https://security-tracker.debian.org/tracker/CVE-2017-18269)\n- Fixed version: `2.24-11+deb9u4`\n### 🔍 Overview\nAn SSE2-optimized memmove implementation for i386 in sysdeps/i386/i686/multiarch/memcpy-sse2-unaligned.S in the GNU C Library (aka glibc or libc6) 2.21 through 2.27 does not correctly perform the overlapping memory check if the source memory range spans the middle of the address space, resulting in corrupt data being produced by the copy operation. This may disclose information to context-dependent attackers, or result in a denial of service, or, possibly, code execution.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2017-18269)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%275fba3838-6499-5076-bbb7-16cb4701d70a*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2017-18269))~cve~%27CVE-2017-18269))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: multiarch-support@2.24-11+deb9u3"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2017-12424",
+          "ruleIndex": 16,
+          "level": "error",
+          "message": {
+            "text": "Name: CVE-2017-12424\nSeverity: Critical\nComponent: passwd\nType: Package vulnerability\nVersion: 1:4.4-4.1\nFixed version: 1:4.4-4.1+deb9u1\nSource: [CVE-2017-12424](https://security-tracker.debian.org/tracker/CVE-2017-12424)\nDescription: In shadow before 4.5, the newusers tool could be made to manipulate internal data structures in ways unintended by the authors. Malformed input may lead to crashes (with a buffer overflow or other memory corruption) or other unspecified behaviors. This crosses a privilege boundary in, for example, certain web-hosting environments in which a Control Panel allows an unprivileged user account to create subaccounts.",
+            "markdown": "\n### 🌟 TL;DR\n- Package vulnerability was detected in component `passwd` version `1:4.4-4.1`\n- Vulnerable to [**`CVE-2017-12424`**](https://security-tracker.debian.org/tracker/CVE-2017-12424)\n- Fixed version: `1:4.4-4.1+deb9u1`\n### 🔍 Overview\nIn shadow before 4.5, the newusers tool could be made to manipulate internal data structures in ways unintended by the authors. Malformed input may lead to crashes (with a buffer overflow or other memory corruption) or other unspecified behaviors. This crosses a privilege boundary in, for example, certain web-hosting environments in which a Control Panel allows an unprivileged user account to create subaccounts.\n\n\n### 🔗 References\n- [Data Source](https://security-tracker.debian.org/tracker/CVE-2017-12424)\n- [View finding in Wiz](https://app.wiz.io/findings/vulnerability-findings#~(entity~(~%27c76c7d78-d854-52e8-a9f8-bbbe7254fa79*2cSECURITY_TOOL_FINDING)))\n- [View vulnerability in catalog](https://app.wiz.io/policies/vulnerability-catalog#~(filters~(search~(contains~%27CVE-2017-12424))~cve~%27CVE-2017-12424))\n"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "docker.io/library/php@sha256:6ce95208609dc66df163ab936c970b3b34cd901b85c747102c5999f08ade9143",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 1
+                }
+              },
+              "message": {
+                "text": "/: passwd@1:4.4-4.1"
+              }
+            }
+          ]
+        }
+      ],
+      "columnKind": "utf16CodeUnits",
+      "originalUriBaseIds": {
+        "ROOTPATH": {
+          "uri": "file:///"
+        }
+      }
+    }
+  ]
+}
